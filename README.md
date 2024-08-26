@@ -12,7 +12,7 @@ Code for modeling the state updates of the network.
 
 --algorithm.py
 
-Code for RB-DRN algorithm.
+Code for the RB-DRN algorithm.
 
 The evaluation results during training will be recorded in the TensorBoard log file.
 
