@@ -6,13 +6,13 @@ from scipy.special import comb
 
 class AoI_Energy(object):
 
-    def __init__(self, seed=0, user_num=20, beta2=0.4, request_p=0.6, slot_Dd=1, **kwargs):
+    def __init__(self, seed=0, user_num=100, beta2=0.4, request_p=0.6, slot_Dd=1, **kwargs):
         #ATTENTION 新加
         self.Dd1 = None
         self.user_req_ind = None
         self.Last_State = None
 
-        User_Num = user_num  # number of users 用户数量->20
+        User_Num = user_num  # number of users 用户数量
         Sensor_Num = 10  # number of sensors 传感器数量->10
         Max_Update_Num = 4  # supported maximum number of updated sensors 支持的最大更新传感器数
         Updating_Energy_Cost = np.full((Sensor_Num,), 10, dtype=np.float64)  # Eu (Sensor_Num,) 传感器更新能耗10
@@ -26,7 +26,7 @@ class AoI_Energy(object):
         # Bandwidth = np.array([1, 1.3, 1.7, 2.0])
         Omega_Pro = np.ones(User_Num, dtype=np.float64) * (1 / User_Num)  # 不同用户的权重（一样重要）
         Dd = slot_Dd  # slot of Dd
-        # 0.6\0.7\0.8 ---- 0.6
+
         Beta_1 = 1 - beta2  # AOI开销所占的权重 0.6
         Beta_2 = beta2  # energy开销所占的权重 0.4
         Para = 10  # AOI_max的参数
@@ -63,9 +63,6 @@ class AoI_Energy(object):
         # print("------------------------------------------------动作空间-----------------------------------------------")
 
 
-
-
-    @staticmethod
     # 可能的动作数量（传感器数量10，支持的最大更新传感器数4）
     def _possible_action_num(Q, P):
         A = 0
