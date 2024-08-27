@@ -6,11 +6,11 @@
  TensorBoard+
  Python3.7
 
---model.py
+--model_test.py
 
 Code for modeling the state updates of the network.
 
---model_test.py
+--algorithm.py
 
 Code for the RB-DRN algorithm.
 
