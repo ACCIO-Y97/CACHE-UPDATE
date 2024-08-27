@@ -10,7 +10,7 @@
 
 Code for modeling the state updates of the network.
 
---algorithm.py
+--model_test.py
 
 Code for the RB-DRN algorithm.
 
